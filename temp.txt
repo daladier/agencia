@@ -1,0 +1,24 @@
+Migrating: 2019_03_12_233144_create_planes_table
+
+   Illuminate\Database\QueryException  : SQLSTATE[HY000]: General error: 1215 Cannot add foreign key constraint (SQL: alter table `planes` add constraint `planes_brand_id_foreign` foreign key (`brand_id`) references `brands` (`id`) on delete cascade)
+
+  at C:\Bitnami\wampstack-7.1.7-0\apache2\htdocs\agencia\vendor\laravel\framework\src\Illuminate\Database\Connection.php:664
+    660|         // If an exception occurs when attempting to run a query, we'll format the error
+    661|         // message to include the bindings with SQL, which will make this exception a
+    662|         // lot more helpful to the developer instead of just the database's errors.
+    663|         catch (Exception $e) {
+  > 664|             throw new QueryException(
+    665|                 $query, $this->prepareBindings($bindings), $e
+    666|             );
+    667|         }
+    668|
+
+  Exception trace:
+
+  1   PDOException::("SQLSTATE[HY000]: General error: 1215 Cannot add foreign key constraint")
+      C:\Bitnami\wampstack-7.1.7-0\apache2\htdocs\agencia\vendor\laravel\framework\src\Illuminate\Database\Connection.php:458
+
+  2   PDOStatement::execute()
+      C:\Bitnami\wampstack-7.1.7-0\apache2\htdocs\agencia\vendor\laravel\framework\src\Illuminate\Database\Connection.php:458
+
+  Please use the argument -v to see more details.
